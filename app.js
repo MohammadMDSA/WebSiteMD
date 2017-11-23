@@ -49,10 +49,27 @@ app.get('/ab(cd)?e', (req, res) => {
 	res.send('ab(cd)?e');
 });
 
-app.get(/a/, (req, res) => {
+app.get(/abb/, (req, res) => {
 	res.send('/a/');
 });
 
 app.get(/.*fly$/, (req, res) => {
 	res.send('/.*fly$/');
+});
+
+// Routing params
+app.get('/users/:userId/books/:bookId', (req, res) => {
+	res.send(req.params);
+});
+
+app.get('/flights/:form-:to', (req, res) => {
+	res.send(req.params);
+});
+
+app.get('/plantae/:genus.:species', (req, res) => {
+	res.send(req.params);
+});
+
+app.get('/user/:userId(\\d+)', (req, res) => {
+	res.send(req.params);
 });
