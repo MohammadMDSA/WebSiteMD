@@ -73,3 +73,15 @@ app.get('/plantae/:genus.:species', (req, res) => {
 app.get('/user/:userId(\\d+)', (req, res) => {
 	res.send(req.params);
 });
+
+// App.route()
+app.route('/book')
+	.get((req, res) => {
+		res.send('Get a random book');
+	})
+	.post((req, res) => {
+		res.send('Add a book');
+	})
+	.put((req, res) => {
+		res.send('Update the book');
+	});
