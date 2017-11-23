@@ -7,6 +7,10 @@ app.listen(port, () => {
 	console.log(`Server listening to ${port}`);
 });
 
+app.use((req, res, next) => {
+	console.log(req.url);
+});
+
 app.get('/', (req, res) => {
 	res.send('Hello world');
 });
