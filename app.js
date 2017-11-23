@@ -9,7 +9,7 @@ app.listen(port, () => {
 });
 
 app.use((req, res, next) => {
-	console.log(`${Date.now}\t${req.url}`);
+	console.log(`${req.url}`);
 	next();
 });
 
