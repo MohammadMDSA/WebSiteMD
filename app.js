@@ -16,6 +16,9 @@ app.use((req, res, next) => {
 app.route('/')
 	.get((req, res) => {
 		res.send(html);
+	})
+	.post((req, res) => {
+		res.send(html);
 	});
 
 let html = fs.readFileSync('index.html');
