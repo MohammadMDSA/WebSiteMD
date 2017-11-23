@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const router = express.Router();
 
 const port = 3000;
 app.listen(port, () => {
@@ -85,3 +86,20 @@ app.route('/book')
 	.put((req, res) => {
 		res.send('Update the book');
 	});
+
+// Express Router
+router.use((req, res, next) => {
+	console.log('Time: ', Date.now());
+	next();
+
+});
+
+router.get('/', (req, res) => {
+	res.send('Birds home page');
+});
+
+router.get('/about', (req, res) => {
+	res.send('About birds');
+});
+
+module.exports = router;
